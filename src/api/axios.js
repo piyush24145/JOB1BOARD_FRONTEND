@@ -1,16 +1,17 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL,
+  // withCredentials: true, // agar cookies use kar rahe ho toh uncomment
 });
 
-// 🔐 Automatically attach token to every request
 API.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); // recruiter token
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+    const token = localStorage.getItem("token");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
   },
   (error) => Promise.reject(error)
