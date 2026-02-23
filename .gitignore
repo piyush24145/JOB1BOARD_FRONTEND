@@ -1,1 +1,15 @@
+# dependencies
+node_modules/
+
+# environment variables
 .env
+
+# uploads (agar resume ya files upload ho rahi hain)
+uploads/
+
+# logs
+npm-debug.log*
+
+# misc
+.DS_Store
+.vscode/
