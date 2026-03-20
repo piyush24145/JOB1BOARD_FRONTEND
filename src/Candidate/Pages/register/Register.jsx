@@ -3,8 +3,7 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import API from "/src/api/axios";
-import Mosaic from "../login/Loginsection/mosaic";
-
+import Mosaic from "../login/Loginsection/Mosaic";
 const Register = () => {
   const navigate = useNavigate();
 
