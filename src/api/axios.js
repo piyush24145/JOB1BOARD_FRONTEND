@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const baseURL =
-  import.meta.env.https://jobboard-backend-f6y8.onrender.com || "http://localhost:5000/api";
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 const API = axios.create({
   baseURL,
-  // withCredentials: true, // agar cookies use kar rahe ho toh uncomment
+  // withCredentials: true,
 });
 
 API.interceptors.request.use(
